@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="streetWho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,45 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PrS-DF-pdi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-Z7-onU">
+                                <rect key="frame" x="20" y="550" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="scl-qb-exg">
+                                <rect key="frame" x="20" y="495" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hxu-Z7-onU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Aj-fy-Eg7"/>
+                            <constraint firstItem="PrS-DF-pdi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="43p-TD-wRP"/>
+                            <constraint firstItem="scl-qb-exg" firstAttribute="trailing" secondItem="hxu-Z7-onU" secondAttribute="trailing" id="Avs-zN-WVU"/>
+                            <constraint firstItem="PrS-DF-pdi" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="DN5-dy-r9L"/>
+                            <constraint firstItem="PrS-DF-pdi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ImS-Cm-PCu"/>
+                            <constraint firstItem="scl-qb-exg" firstAttribute="leading" secondItem="hxu-Z7-onU" secondAttribute="leading" id="MWL-A7-aTr"/>
+                            <constraint firstItem="hxu-Z7-onU" firstAttribute="centerX" secondItem="PrS-DF-pdi" secondAttribute="centerX" id="V2P-Ro-Wy6"/>
+                            <constraint firstAttribute="trailing" secondItem="PrS-DF-pdi" secondAttribute="trailing" id="hns-Hz-XDO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hxu-Z7-onU" secondAttribute="bottom" constant="29" id="vn5-gE-hwp"/>
+                            <constraint firstItem="hxu-Z7-onU" firstAttribute="top" secondItem="scl-qb-exg" secondAttribute="bottom" constant="25" id="wVY-Ih-W9J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adress" destination="hxu-Z7-onU" id="nWi-Vd-gpD"/>
+                        <outlet property="infoText" destination="scl-qb-exg" id="1hA-xW-3SV"/>
+                        <outlet property="mapView" destination="PrS-DF-pdi" id="ocA-T0-ifv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="174" y="167"/>
         </scene>
     </scenes>
 </document>
